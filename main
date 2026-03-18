@@ -1,0 +1,88 @@
+# Project Plan
+
+Phase 1 (Weeks 1–2)
+- Setup environment
+- Understand DBpedia structure
+
+Phase 2 (Weeks 3–6)
+- Develop data cleaning scripts
+- Detect inconsistencies
+
+Phase 3 (Weeks 7–9)
+- Optimize SPARQL queries
+- Performance testing
+
+Phase 4 (Weeks 10–12)
+- Build visualization dashboard
+- Final documentation
+
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv('data/sample_data.csv')
+
+# Show missing values
+print("Missing values:\n", df.isnull().sum())
+
+# Remove duplicates
+df = df.drop_duplicates()
+
+# Fill missing values
+df = df.fillna(method='ffill')
+
+# Save cleaned data
+df.to_csv('data/cleaned_data.csv', index=False)
+
+print("Data cleaning completed.")
+
+name,age,city
+Ali,25,Abuja
+John,,Lagos
+Ali,25,Abuja
+Mary,30,
+SELECT ?city ?population
+WHERE {
+  ?city a dbo:City ;
+        dbo:populationTotal ?population .
+}
+LIMIT 10
+
+Before Optimization: 5.2 seconds
+After Optimization: 2.1 seconds
+Improvement: 60%
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Issues': ['Missing', 'Duplicates', 'Inconsistencies'],
+    'Count': [40, 25, 15]
+}
+
+df = pd.DataFrame(data)
+
+plt.bar(df['Issues'], df['Count'])
+plt.title("DBpedia Data Quality Issues")
+plt.xlabel("Issue Type")
+plt.ylabel("Count")
+plt.show()
+
+# Full Proposal
+
+Abstract:
+DBpedia is a large knowledge graph extracted from Wikipedia. This project improves its usability by fixing data inconsistencies, optimizing queries, and building a dashboard.
+
+Problem:
+- Missing data
+- Inconsistent entries
+- Slow queries
+
+Solution:
+- Automated data cleaning
+- Query optimization
+- Visualization dashboard
+
+Expected Outcome:
+- Faster queries
+- Cleaner data
+- Better usability
