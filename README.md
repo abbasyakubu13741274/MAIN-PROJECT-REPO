@@ -106,9 +106,4 @@ Location: `proposal/`
 ## Author
 **Abbas Yakubu**  
 Location: Sokoto, Nigeria  
-[LinkedIn](https://www.linkedin.com/in/abbas-yakubu-511a3125a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)  
 
----
-
-## Notes
-This repository is structured to showcase all aspects of the GSoC 2026 project in a **single, comprehensive place** for easy review by mentors.
